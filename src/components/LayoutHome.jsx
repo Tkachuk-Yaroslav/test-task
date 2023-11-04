@@ -1,7 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link, Outlet } from 'react-router-dom';
+import { selectBaseCurrency } from 'redux/selectors';
 
 const LayoutHome = () => {
+  const baseCurrency = useSelector(selectBaseCurrency);
   return (
     <>
       <header>
@@ -15,6 +18,7 @@ const LayoutHome = () => {
             </li>
           </ul>
         </nav>
+        {baseCurrency && <p>Your base currency: {baseCurrency}</p>}
       </header>
       <Outlet />
     </>

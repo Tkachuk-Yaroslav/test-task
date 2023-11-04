@@ -3,9 +3,11 @@ import LayoutHome from './LayoutHome';
 import HomePage from 'pages/HomePage/HomePage';
 import RatesPage from 'pages/RatesPage/RatesPage';
 import { useEffect } from 'react';
-import { getCurrentPosition } from 'service/getCurrentPosition';
+import { useDispatch } from 'react-redux';
+import { fetchBaseCurrency } from 'redux/operations';
 
 export const App = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
     const options = {
       enableHighAccuracy: true,
@@ -14,7 +16,7 @@ export const App = () => {
     };
 
     function success(pos) {
-      getCurrentPosition(pos.coords);
+      dispatch(fetchBaseCurrency(pos.coords));
     }
 
     function error(err) {

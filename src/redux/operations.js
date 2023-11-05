@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { async } from 'q';
 import { exchangeCurrency } from 'service/chengeCurrency';
 import { getCurrentPosition } from 'service/getCurrentPosition';
 

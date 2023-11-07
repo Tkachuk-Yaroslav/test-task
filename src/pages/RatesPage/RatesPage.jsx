@@ -1,7 +1,7 @@
-import React from 'react';
+import RatesList from 'components/RatesList/RatesList';
 
 const RatesPage = () => {
-  return <div>RatesPage</div>;
+  return <RatesList />;
 };
 
 export default RatesPage;

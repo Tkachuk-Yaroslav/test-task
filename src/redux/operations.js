@@ -5,10 +5,10 @@ import { getCurrentPosition } from 'service/getCurrentPosition';
 export const fetchBaseCurrency = createAsyncThunk(
   'currency/base',
   async (coords, thunkApi) => {
-    const { baseCurrency } = thunkApi.getState();
-    if (baseCurrency) {
-      return thunkApi.rejectWithValue('there is already a base currency');
-    }
+    // const { baseCurrency } = thunkApi.getState();
+    // if (baseCurrency) {
+    //   return thunkApi.rejectWithValue('there is already a base currency');
+    // }
     try {
       const data = await getCurrentPosition(coords);
       return data.results[0].annotations.currency.iso_code;
